@@ -1,0 +1,193 @@
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 10px;
+    max-height: 80px;
+    perspective: 1500px;
+    /* Adds depth for 3D effect */
+}
+
+/* Apply animation to the wave elements */
+.parallax use {
+    animation: wave-animation 12s infinite ease-in-out;
+    opacity: 1;
+}
+
+/* Wave 1 - Color and Y Position */
+.parallax>use:nth-child(1) {
+    animation-delay: -8s;
+    animation-duration: 12s;
+    fill: rgba(19, 31, 87, 0.1);
+    /* Dark Blue */
+    animation-name: wave-animation-1;
+}
+
+/* Wave 2 - Color and Y Position */
+.parallax>use:nth-child(2) {
+    animation-delay: -6s;
+    animation-duration: 12s;
+    fill: rgba(16, 0, 240, 0.01);
+    /* Slightly lighter blue */
+    animation-name: wave-animation-2;
+}
+
+/* Wave 3 - Color and Y Position */
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 12s;
+    fill: rgba(25, 25, 112, 0.2);
+    /* Lighter blue */
+    animation-name: wave-animation-3;
+}
+
+/* Wave 4 - Color and Y Position */
+.parallax>use:nth-child(4) {
+    animation-delay: -2s;
+    animation-duration: 12s;
+    fill: rgba(25, 25, 112, 0.4);
+    /* Very light blue */
+    opacity: 0.5;
+    animation-name: wave-animation-4;
+}
+
+/* Wave Animation for each wave (Up and Down movement with 3D effect) */
+
+/* Wave 1 */
+@keyframes wave-animation-1 {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+        /* No movement initially */
+    }
+
+    25% {
+        transform: translate3d(20px, -10px, 5px);
+        /* Move in X and Z axes */
+    }
+
+    50% {
+        transform: translate3d(-20px, 10px, -5px);
+        /* Move in opposite directions */
+    }
+
+    75% {
+        transform: translate3d(10px, -8px, 10px);
+        /* Slight movement */
+    }
+}
+
+/* Wave 2 */
+@keyframes wave-animation-2 {
+
+    0%,
+    100% {
+        transform: translate3d(0, 4px, 0);
+        /* No movement initially */
+    }
+
+    25% {
+        transform: translate3d(15px, -6px, 10px);
+        /* Move in X and Z axes */
+    }
+
+    50% {
+        transform: translate3d(-15px, 12px, -10px);
+        /* Move in opposite directions */
+    }
+
+    75% {
+        transform: translate3d(8px, -4px, 5px);
+        /* Slight movement */
+    }
+}
+
+/* Wave 3 */
+@keyframes wave-animation-3 {
+
+    0%,
+    100% {
+        transform: translate3d(0, 2px, 0);
+        /* No movement initially */
+    }
+
+    25% {
+        transform: translate3d(10px, -5px, 15px);
+        /* Move in X and Z axes */
+    }
+
+    50% {
+        transform: translate3d(-10px, 15px, -15px);
+        /* Move in opposite directions */
+    }
+
+    75% {
+        transform: translate3d(5px, -3px, 8px);
+        /* Slight movement */
+    }
+}
+
+/* Wave 4 */
+@keyframes wave-animation-4 {
+
+    0%,
+    100% {
+        transform: translate3d(0, 6px, 0);
+        /* No movement initially */
+    }
+
+    25% {
+        transform: translate3d(25px, -8px, 20px);
+        /* Move in X and Z axes */
+    }
+
+    50% {
+        transform: translate3d(-25px, 18px, -20px);
+        /* Move in opposite directions */
+    }
+
+    75% {
+        transform: translate3d(15px, -6px, 10px);
+        /* Slight movement */
+    }
+}
+
+/* Tablet View (768px and below) */
+@media (max-width: 768px) {
+    .parallax>use:nth-child(1) {
+        transform: translateY(3px);
+    }
+
+    .parallax>use:nth-child(2) {
+        transform: translateY(6px);
+    }
+
+    .parallax>use:nth-child(3) {
+        transform: translateY(9px);
+    }
+
+    .parallax>use:nth-child(4) {
+        transform: translateY(12px);
+    }
+}
+
+/* Mobile View (480px and below) */
+@media (max-width: 480px) {
+    .parallax>use:nth-child(1) {
+        transform: translateY(4px);
+    }
+
+    .parallax>use:nth-child(2) {
+        transform: translateY(8px);
+    }
+
+    .parallax>use:nth-child(3) {
+        transform: translateY(12px);
+    }
+
+    .parallax>use:nth-child(4) {
+        transform: translateY(16px);
+    }
+}
